@@ -100,6 +100,21 @@ RUN rm -rf panda \
   && cd /firmwire_deps/panda/panda/python/core/ \
   && python3 setup.py install
 
+#Install AFLplusplus
+WORKDIR /Aflplusplus
+RUN apt update \
+  && apt install -y build-essential python3-dev automake cmake git flex bison libglib2.0-dev libpixman-1-dev python3-setuptools cargo libgtk-3-dev \
+  && apt install -y lld llvm llvm-dev clang \
+  && apt install -y gcc-$(gcc --version|head -n1|sed 's/\..*//'|sed 's/.* //')-plugin-dev libstdc++-$(gcc --version|head -n1|sed 's/\..*//'|sed 's/.* //')-dev \
+  && apt install -y ninja-build \
+  && git clone https://github.com/AFLplusplus/AFLplusplus \
+  && cd AFLplusplus \
+  && python3 -m pip install --upgrade pip \
+  && make distrib \
+  && make install
+#--------------------
+
+
 COPY requirements.txt /firmwire/requirements.txt
 RUN pip3 install -r /firmwire/requirements.txt
 
