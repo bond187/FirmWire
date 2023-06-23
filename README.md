@@ -8,7 +8,7 @@
 
 # FirmWire
 
-_This is a fork of of the FirmWire project by found [here]( https://github.com/FirmWire/FirmWire)._
+_This is a fork of of the FirmWire project found [here]( https://github.com/FirmWire/FirmWire)._
 
 FirmWire is a full-system baseband firmware analysis platform that supports Samsung and MediaTek. It enables fuzzing, root-cause analysis, and debugging of baseband firmware images. **See the [FirmWire documentation](https://firmwire.github.io/docs/installation.html) to get started!**
 
